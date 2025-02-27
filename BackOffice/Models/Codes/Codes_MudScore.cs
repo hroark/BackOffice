@@ -1,12 +1,11 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace BackOffice.Models.Codes
 {
+    [PrimaryKey("Score", "PlantCode")]
     public class Codes_MudScore
     {
-        [Key]
         public int Score { get; set; }
-        [Key]
         public required string PlantCode { get; set; }
         public bool NotifyPlant { get; set; }
         public required string Description { get; set; }

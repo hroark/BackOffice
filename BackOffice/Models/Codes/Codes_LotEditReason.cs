@@ -1,8 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
 
 namespace BackOffice.Models.Codes
 {
+    [PrimaryKey("ReasonKey", "PlantCode")]
     public class Codes_LotEditReason
     {
         [Key]

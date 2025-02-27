@@ -79,61 +79,61 @@ namespace BackOffice.Models.Codes
 
 
 
-        public void Load_Condemned()
-        {
+        //public void Load_Condemned()
+        //{
   
 
-            Clear();
-            DataTable _codesGrade;
+        //    Clear();
+        //    DataTable _codesGrade;
 
 
-            DataTable _gradeCodes = DatabaseActions.ExecuteProcedure("Abattoir.Grades_Select_Condemn_Active", new Dictionary<string, string>());
-            _codesGrade = _gradeCodes;
+        //    DataTable _gradeCodes = DatabaseActions.ExecuteProcedure("Abattoir.Grades_Select_Condemn_Active", new Dictionary<string, string>());
+        //    _codesGrade = _gradeCodes;
 
-            foreach (DataRow _gradeRow in _codesGrade.Rows)
-            {
-                Codes_Grade_Plant _item = new Codes_Grade_Plant
-                {
-                    Code = _gradeRow.Field<byte>("GradeCode"),
-                    Description = _gradeRow.Field<string>("Description"),
-                    ScanString = _gradeRow.Field<string>("ScanString"),
-                    // Abbreviation = _gradeRow.Field<string>("Abbreviation"),
-                };
+        //    foreach (DataRow _gradeRow in _codesGrade.Rows)
+        //    {
+        //        Codes_Grade_Plant _item = new Codes_Grade_Plant
+        //        {
+        //            Code = _gradeRow.Field<byte>("GradeCode"),
+        //            Description = _gradeRow.Field<string>("Description"),
+        //            ScanString = _gradeRow.Field<string>("ScanString"),
+        //            // Abbreviation = _gradeRow.Field<string>("Abbreviation"),
+        //        };
 
-                Add(_item.ScanString.ToUpper(), _item);
+        //        Add(_item.ScanString.ToUpper(), _item);
 
-            }
+        //    }
 
-        }
+        //}
 
-        private void Load(string StoredProc, string plant)
-        {
-            Clear();
-            DataTable _codesGrade;
-            if (plant.Length == 1)
-            {
-                plant = "0" + plant;
-            }
+        //private void Load(string StoredProc, string plant)
+        //{
+        //    Clear();
+        //    DataTable _codesGrade;
+        //    if (plant.Length == 1)
+        //    {
+        //        plant = "0" + plant;
+        //    }
 
-            DataTable _gradeCodes = DatabaseActions.ExecuteProcedure(StoredProc, new Dictionary<string, string>());
-            _codesGrade = _gradeCodes;
+        //    DataTable _gradeCodes = DatabaseActions.ExecuteProcedure(StoredProc, new Dictionary<string, string>());
+        //    _codesGrade = _gradeCodes;
 
 
 
-            foreach (DataRow _gradeRow in _codesGrade.Rows)
-            {
-                Codes_Grade_Plant _item = new Codes_Grade_Plant
-                {
-                    Code = _gradeRow.Field<byte>("GradeCode"),
-                    Description = _gradeRow.Field<string>("Description"),
-                    ScanString = _gradeRow.Field<string>("ScanString"),
-                    //Abbreviation = _gradeRow.Field<string>("Abbreviation"),
-                };
+        //    foreach (DataRow _gradeRow in _codesGrade.Rows)
+        //    {
+        //        Codes_Grade_Plant _item = new Codes_Grade_Plant
+        //        {
+        //            Code = _gradeRow.Field<byte>("GradeCode"),
+        //            Description = _gradeRow.Field<string>("Description"),
+        //            ScanString = _gradeRow.Field<string>("ScanString"),
+        //            //Abbreviation = _gradeRow.Field<string>("Abbreviation"),
+        //        };
 
-                Add(_item.ScanString.ToUpper(), _item);
+        //        Add(_item.ScanString.ToUpper(), _item);
 
-            }
+        //    }
 
-        }
+        //}
     }
 }

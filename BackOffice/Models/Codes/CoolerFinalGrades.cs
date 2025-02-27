@@ -5,7 +5,7 @@ namespace BackOffice.Models.Codes
 {
     public class CoolerFinalGrades
     {
-        public string FinalGrade { get; set; }
+        public required string FinalGrade { get; set; }
         public int HotGrade { get; set; }
         public int RunCode { get; set; }
 

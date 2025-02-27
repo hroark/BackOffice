@@ -1,12 +1,11 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace BackOffice.Models.Codes
 {
+    [PrimaryKey("Code", "PlantCode")]
     public class Codes_Gender
     {
-        [Key]
         public required string Code { get; set; }
-        [Key]
         public required string PlantCode { get; set; }
         public string? Description { get; set; }
         public required string AS400 { get; set; }

@@ -1,8 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
 using System.Data;
 
 namespace BackOffice.Models.Codes
 {
+    [PrimaryKey("Code", "PlantCode")]
     public class Codes_Grade
     {
 
@@ -12,9 +14,7 @@ namespace BackOffice.Models.Codes
         /// <value>
         /// The Grade Code.
         /// </value>
-        [Key]
         public int Code { get; set; }
-        [Key]
         public string PlantCode { get; set; }
         /// <summary>
         /// Gets or sets the long description.

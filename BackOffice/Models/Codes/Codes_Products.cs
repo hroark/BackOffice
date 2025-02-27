@@ -1,12 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.Data;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace BackOffice.Models.Codes
 {
+    [PrimaryKey("Code", "PlantCode")]
     public class Codes_Products
     {
-        [Key]
         public byte Code { get; set; }
+        public required string PlantCode { get; set; }
         public required string ScanString { get; set; }
         public required string Description { get; set; }
         public required string ProductTable { get; set; }

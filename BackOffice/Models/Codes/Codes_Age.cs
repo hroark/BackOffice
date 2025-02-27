@@ -1,15 +1,15 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
 
 
 namespace BackOffice.Models.Codes
 {
+    [PrimaryKey("ScanString", "PlantCode")]
     public class Codes_Age
     {
-        [Key]
-        public string ScanString { get; set; }
-        [Key]
-        public string PlantCode { get; set; }
-        public string Description { get; set; }
+        public required string ScanString { get; set; }
+        public required string PlantCode { get; set; }
+        public required string Description { get; set; }
         public short Code { get; set; }
 
 

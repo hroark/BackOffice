@@ -1,17 +1,16 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace BackOffice.Models.Codes
 {
     /// <summary>
     /// Cattle breeds description and scan string
     /// </summary>
+    [PrimaryKey("Code", "PlantCode")]
     public class Codes_Buy
     {
-        [Key]
-        public string code { get; set; }
-        [Key]
-        public string PlantCode { get; set; }
-        public string Description { get; set; }
+        public required string Code { get; set; }
+        public required string PlantCode { get; set; }
+        public required string Description { get; set; }
 
 
         public override string ToString()

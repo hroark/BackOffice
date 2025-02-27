@@ -7,9 +7,9 @@ namespace BackOffice.Models.Codes
     {
         [Key]
         public byte Code { get; set; }
-        public string ScanString { get; set; }
-        public string Description { get; set; }
-        public string AS400 { get; set; }
+        public required string ScanString { get; set; }
+        public required string Description { get; set; }
+        public required string AS400 { get; set; }
 
         public override string ToString()
         {

@@ -1,24 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
-using System.Data;
-using System.Linq;
-using System.Text;
 
 
 namespace BackOffice.Models.Codes
 {
     public class Codes_Cancel
     {
+        [Key]
+        public byte Code { get; set; }
+        public string Description { get; set; }
+
         public Codes_Cancel(byte code, string description)
         {
             Code = code;
             Description = description;
         }
-        [Key]
-        public byte Code { get; set; }
-        public string Description { get; set; }
     }
+
+
+
     //public class Codes_Cancel_Dict : Dictionary<byte, Codes_Cancel>
     //{
     //    public Codes_Cancel_Dict()
@@ -35,7 +35,7 @@ namespace BackOffice.Models.Codes
     //        foreach (DataRow _row in _cancelCodes.Rows)
     //        {
     //            Codes_Cancel _item = new Codes_Cancel(_row.Field<byte>("Code"), _row.Field<string>("Description"));
-                
+
     //            Add(_item.Code, _item);
     //        }
     //    }

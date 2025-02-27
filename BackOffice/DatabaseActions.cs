@@ -5,7 +5,7 @@ namespace BackOffice
 {
     public static class DatabaseActions
     {
-        internal static string connectionString = "Server=.;Database=BackOffice;Trusted_Connection=True;";
+        internal static string connectionString = "Data Source=19-001257\\SQLEXPRESS;Initial Catalog=BackOffice;Trusted_Connection=True;";
 
         public static DataTable ExecuteProcedure(string procName, Dictionary<string, string> parameters)
         {
