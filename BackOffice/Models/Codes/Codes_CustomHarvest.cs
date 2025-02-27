@@ -1,14 +1,19 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Data;
 
 namespace BackOffice.Models.Codes
 {
     public class Codes_CustomHarvest
     {
-        private string _plant;
-        public string ScanString { get; set; }
-        public string Description { get; set; }
-        public string Plant { get; set; }
+        [Key]
+        public required string Plant { get; set; }
+        [Key]
+        public required string Code { get; set; }
+        private string? AS400 {get;set; }
+        public required string ScanString { get; set; }
+        public required string Description { get; set; }
+
 
         public override string ToString()
         {

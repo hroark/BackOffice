@@ -15,14 +15,13 @@ namespace BackOffice.Models.Stations
         public required Codes_Cool Cool { get; set; }
         public required Codes_Age Age { get; set; }
         public required Codes_CustomHarvest CustomHarvest { get; set; }
-        public required Codes_LotStatus LotStatus { get; set; }
         public required Codes_MudScore MudScore { get; set; }
         public bool? PlantNotified { get; set; }
         public required string CattleType { get; set; }
         public required string UnloadTime { get; set; }
         public required string RestrainerTime { get; set; }
         public int? EditReason { get; set; }
-        public DataTable? ReceivingNumbers { get; set; }
+        public List<string>? ReceivingNumbers { get; set; }
         public bool? Fats { get; set; }
         public bool? BadLot { get; set; }
         public string? Buy { get; set; }

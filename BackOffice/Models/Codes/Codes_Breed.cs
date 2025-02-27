@@ -1,4 +1,4 @@
-﻿using System.Data;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace BackOffice.Models.Codes
 {
@@ -7,7 +7,10 @@ namespace BackOffice.Models.Codes
     /// </summary>
     public class Codes_Breed
     {
+        [Key]
         public string ScanString { get; set; }
+        [Key]
+        public string PlantCode { get; set; }
         public string Description { get; set; }
 
         /// <summary>

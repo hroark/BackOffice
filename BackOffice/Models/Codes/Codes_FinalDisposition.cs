@@ -1,10 +1,14 @@
-﻿namespace BackOffice.Models.Codes
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace BackOffice.Models.Codes
 {
     public class Codes_FinalDisposition
     {
-        public string ScanString { get; set; }
-        public string Description { get; set; }
-        public string Plant { get; set; }
+        [Key]
+        public required string ScanString { get; set; }
+        [Key]
+        public required string PlantCode { get; set; }
+        public required string Description { get; set; }
         public bool Pass { get; set; }
 
         public override string ToString()

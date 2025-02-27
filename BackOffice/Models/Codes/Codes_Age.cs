@@ -1,14 +1,17 @@
-﻿using System.Collections.Generic;
-using System.Data;
+﻿using System.ComponentModel.DataAnnotations;
 
 
 namespace BackOffice.Models.Codes
 {
     public class Codes_Age
     {
+        [Key]
         public string ScanString { get; set; }
+        [Key]
+        public string PlantCode { get; set; }
         public string Description { get; set; }
         public short Code { get; set; }
+
 
         public override string ToString()
         {

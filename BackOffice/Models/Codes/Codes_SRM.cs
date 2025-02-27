@@ -1,9 +1,11 @@
-﻿using System.Data;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Data;
 
 namespace BackOffice.Models.Codes
 {
     public class Codes_SRM
     {
+        [Key]
         public byte Code { get; set; }
         public string Description { get; set; }
 

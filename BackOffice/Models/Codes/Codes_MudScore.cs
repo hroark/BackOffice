@@ -1,13 +1,15 @@
-﻿using System.Data;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace BackOffice.Models.Codes
 {
     public class Codes_MudScore
     {
+        [Key]
         public int Score { get; set; }
+        [Key]
+        public required string PlantCode { get; set; }
         public bool NotifyPlant { get; set; }
-        public string Plant { get; set; }
-        public string Description { get; set; }
+        public required string Description { get; set; }
 
         public override string ToString()
         {

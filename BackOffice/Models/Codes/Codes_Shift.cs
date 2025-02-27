@@ -1,11 +1,12 @@
-﻿using System.Data;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace BackOffice.Models.Codes
 {
     public class Codes_Shift
     {
-        public string ScanString { get; set; }
-        public string Description { get; set; }
+        [Key]
+        public required string ScanString { get; set; }
+        public required string Description { get; set; }
 
         public override string ToString()
         {

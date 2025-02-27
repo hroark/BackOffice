@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Data;
 
 namespace BackOffice.Models.Codes
 {
@@ -11,7 +12,10 @@ namespace BackOffice.Models.Codes
         /// <value>
         /// The Grade Code.
         /// </value>
+        [Key]
         public int Code { get; set; }
+        [Key]
+        public string PlantCode { get; set; }
         /// <summary>
         /// Gets or sets the long description.
         /// </summary>
@@ -66,46 +70,46 @@ namespace BackOffice.Models.Codes
             return string.Format("{0} ", Description);
         }
 
-    }
+    
 
-    public class Codes_Grade_Dict : Dictionary<string, Codes_Grade>
-    {
+    //public class Codes_Grade_Dict : Dictionary<string, Codes_Grade>
+    //{
 
-        public void Load_HotScale(char? Gender, string plant)
-        {
-            Load("Abattoir.Grades_HotScaleSelect_Local", plant, Gender);
-        }
-        public void Load_HotScale(string plant, string connectionString, bool isLocal)
-        {
-            Load("Abattoir.Grades_HotScaleSelect", plant, connectionString);
-        }
+    //    public void Load_HotScale(char? Gender, string plant)
+    //    {
+    //        Load("Abattoir.Grades_HotScaleSelect_Local", plant, Gender);
+    //    }
+    //    public void Load_HotScale(string plant, string connectionString, bool isLocal)
+    //    {
+    //        Load("Abattoir.Grades_HotScaleSelect", plant, connectionString);
+    //    }
 
-        public void Load_Condemned()
-        {
-
-
-            Clear();
-            DataTable _codesGrade;
+        //public void Load_Condemned()
+        //{
 
 
-            DataTable _gradeCodes = DatabaseActions.ExecuteProcedure("Abattoir.Grades_Select_Condemn_Active", new Dictionary<string, string>());
-            _codesGrade = _gradeCodes;
+        //    Clear();
+        //    DataTable _codesGrade;
 
-            foreach (DataRow _gradeRow in _codesGrade.Rows)
-            {
-                Codes_Grade _item = new Codes_Grade
-                {
-                    Code = _gradeRow.Field<byte>("GradeCode"),
-                    Description = _gradeRow.Field<string>("Description"),
-                    ScanString = _gradeRow.Field<string>("ScanString"),
-                    // Abbreviation = _gradeRow.Field<string>("Abbreviation"),
-                };
 
-                Add(_item.ScanString.ToUpper(), _item);
+        //    DataTable _gradeCodes = DatabaseActions.ExecuteProcedure("Abattoir.Grades_Select_Condemn_Active", new Dictionary<string, string>());
+        //    _codesGrade = _gradeCodes;
 
-            }
+        //    foreach (DataRow _gradeRow in _codesGrade.Rows)
+        //    {
+        //        Codes_Grade _item = new Codes_Grade
+        //        {
+        //            Code = _gradeRow.Field<byte>("GradeCode"),
+        //            Description = _gradeRow.Field<string>("Description"),
+        //            ScanString = _gradeRow.Field<string>("ScanString"),
+        //            // Abbreviation = _gradeRow.Field<string>("Abbreviation"),
+        //        };
 
-        }
+        //        Add(_item.ScanString.ToUpper(), _item);
+
+        //    }
+
+       // }
 
         private void Load(string storedProc, string plant, char? genderParm = null)
         {
@@ -139,9 +143,9 @@ namespace BackOffice.Models.Codes
 
             //    Add(_item.ScanString.ToUpper(), _item);
 
-            }
+            //}
 
-        //}
+        }
 
         private void Load(string storedProc, string plant, string connectionString)
         {

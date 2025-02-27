@@ -1,13 +1,15 @@
-﻿using System.Data;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Data;
 
 namespace BackOffice.Models.Codes
 {
     public class Codes_Products
     {
+        [Key]
         public byte Code { get; set; }
-        public string ScanString { get; set; }
-        public string Description { get; set; }
-        public DataTable ProductTable { get; set; }
+        public required string ScanString { get; set; }
+        public required string Description { get; set; }
+        public required string ProductTable { get; set; }
 
         public override string ToString()
         {

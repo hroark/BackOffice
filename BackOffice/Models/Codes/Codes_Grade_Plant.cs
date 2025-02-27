@@ -65,17 +65,17 @@ namespace BackOffice.Models.Codes
             return string.Format("{0} ", Description);
         }
 
-    }
+    
 
-    public class Codes_Grade_Plant_Dict : Dictionary<string, Codes_Grade_Plant>
-    {
+    //public class Codes_Grade_Plant_Dict : Dictionary<string, Codes_Grade_Plant>
+    //{
 
 
 
-        public Codes_Grade_Plant_Dict(string plant)
-        {
-            Load("Abattoir.Grades_HotScaleSelect_Mobile", plant);
-        }
+    //    public Codes_Grade_Plant_Dict(string plant)
+    //    {
+    //        Load("Abattoir.Grades_HotScaleSelect_Mobile", plant);
+    //    }
 
 
 

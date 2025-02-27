@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Linq;
 using System.Text;
@@ -14,6 +15,7 @@ namespace BackOffice.Models.Codes
             Code = code;
             Description = description;
         }
+        [Key]
         public byte Code { get; set; }
         public string Description { get; set; }
     }

@@ -15,12 +15,12 @@ namespace BackOffice.Models.Codes
         }
 
     }
-}
 
-public class Codes_Cooler_Grading_Dict : Dictionary<CoolerFinalGrades, int>
-{
-    public Codes_Cooler_Grading_Dict(string plant)
-    {
+
+//public class Codes_Cooler_Grading_Dict : Dictionary<CoolerFinalGrades, int>
+//{
+   // public Codes_Cooler_Grading_Dict(string plant)
+    //{
         //DataTable _coolerGradingCodes =
         //    DataHelper.ExecuteProc("Abattoir.Codes_CGrades_Get", new ProcParams("plant", plant), DataBaseMaster.PlantConnectionString);
 
@@ -35,6 +35,6 @@ public class Codes_Cooler_Grading_Dict : Dictionary<CoolerFinalGrades, int>
 
 
         //    Add(_item, _cgradeRow.Field<int>("FinalGrade"));
-        }
+       // }
     //}
 }

@@ -1,9 +1,11 @@
-﻿using System.Data;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Data;
 
 namespace BackOffice.Models.Codes
 {
     public class Codes_Run
     {
+        [Key]
         public int Code { get; set; }
         public string Description { get; set; }
 

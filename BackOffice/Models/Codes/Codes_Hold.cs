@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Data;
 
 namespace BackOffice.Models.Codes
 {
@@ -10,8 +11,12 @@ namespace BackOffice.Models.Codes
 
     public class Codes_Hold
     {
-        public string ScanString { get; set; }
-        public string Description { get; set; }
+        [Key]
+        public required string ScanString { get; set; }
+        [Key]
+        public required string PlantCode {get;set; }
+        public string? Description { get; set; }
+        public required string AS400 { get; set; }
 
         public override string ToString()
         {
@@ -19,8 +24,8 @@ namespace BackOffice.Models.Codes
         }
     }
 
-    public class Codes_Hold_Dict : Dictionary<string, Codes_Hold>
-    {
+   // public class Codes_Hold_Dict : Dictionary<string, Codes_Hold>
+   // {
 
         //public Codes_Hold_Dict(HoldScreenType screentype, string plant, string connection)
         //{
@@ -52,7 +57,7 @@ namespace BackOffice.Models.Codes
         //    }
 
         //}
-    }
+   //}
 
 }
 

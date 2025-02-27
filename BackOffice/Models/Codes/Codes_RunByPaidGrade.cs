@@ -1,14 +1,17 @@
-﻿namespace BackOffice.Models.Codes
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace BackOffice.Models.Codes
 {
     public class Codes_RunCodesAtGrading
     {
-        public string ScanString { get; set; }
-
+        [Key]
+        public required string ScanString { get; set; }
         public int RunCode { get; set; }
-        public string RunCode_Description { get; set; }
-
+        public required string RunCodeDescription { get; set; }
         public int Grade { get; set; }
-        public string Grade_Description { get; set; }
+        public required string GradeDescription { get; set; }
+
+
 
         public override string ToString()
         {
@@ -18,11 +21,11 @@
 
         public static implicit operator Codes_Run(Codes_RunCodesAtGrading d)
         {
-            return new Codes_Run(d.RunCode, d.RunCode_Description);
+            return new Codes_Run(d.RunCode, d.RunCodeDescription);
         }
         public static implicit operator Codes_Grade(Codes_RunCodesAtGrading d)
         {
-            return new Codes_Grade(d.Grade, d.Grade_Description, d.ScanString);
+            return new Codes_Grade(d.Grade, d.GradeDescription, d.ScanString);
         }
 
 
