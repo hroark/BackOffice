@@ -1,7 +1,7 @@
 ﻿using Microsoft.Data.SqlClient;
 using System.Data;
 
-namespace BackOffice
+namespace BackOffice.DataStuff
 {
     public static class DatabaseActions
     {
