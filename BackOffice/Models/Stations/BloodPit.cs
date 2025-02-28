@@ -1,5 +1,4 @@
 ﻿using BackOffice.Models.Codes;
-using BackOffice.Models.Stations.Interfaces;
 using System.Text.Json;
 
 namespace BackOffice.Models.Stations
@@ -17,6 +16,7 @@ namespace BackOffice.Models.Stations
         public Codes_Gender? Gender { get; set; }
         public int Lot_No { get; set; }
 
+
         public string ToJson()
         {
             return JsonSerializer.Serialize(this);
@@ -28,6 +28,11 @@ namespace BackOffice.Models.Stations
         }
 
         public void SaveToDatabase(BloodPit item)
+        {
+            throw new NotImplementedException();
+        }
+
+        public ITransaction<BloodPit> GetFromDatabase(int count)
         {
             throw new NotImplementedException();
         }

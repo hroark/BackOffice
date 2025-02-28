@@ -1,5 +1,8 @@
 using BackOffice.Components;
+using BackOffice.DataStuff;
+using Microsoft.EntityFrameworkCore;
 using MudBlazor.Services;
+using Microsoft.Extensions.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,6 +10,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 builder.Services.AddMudServices();
+
+builder.Services.AddDbContext<ApplicationDbContext<T>>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("MudblazorDemo")));
+builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
 
