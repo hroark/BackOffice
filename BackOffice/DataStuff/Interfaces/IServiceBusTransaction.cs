@@ -1,6 +1,6 @@
 ﻿using Azure.Messaging.ServiceBus;
 
-namespace BackOffice.Models.Stations.Interfaces
+namespace BackOffice.DataStuff.Interfaces
 {
     public interface IServiceBusTransaction<Transaction>
     {
