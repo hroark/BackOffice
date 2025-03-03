@@ -361,3 +361,5 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/BackOffice/Models/IServiceBusTransaction.cs
+/BackOffice/Models/ITransaction.cs

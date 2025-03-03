@@ -1,5 +1,6 @@
-﻿namespace BackOffice.Models
-{
+
+
+﻿namespace BackOffice.DataStuff.Interfaces;
     public interface ITransaction<T>
     {
         void SaveToDatabase(T item);
@@ -7,4 +8,4 @@
         string ToJson();
         T FromJson(string json);
     }
-}
+

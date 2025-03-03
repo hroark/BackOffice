@@ -1,7 +1,8 @@
 ﻿using Azure.Messaging.ServiceBus;
 
-namespace BackOffice.Models
-{
+
+namespace BackOffice.DataStuff.Interfaces;
+
     public interface IServiceBusTransaction<Transaction>
     {
             Task SendMessageAsync(Transaction message);
@@ -10,4 +11,4 @@ namespace BackOffice.Models
             Task StopProcessingAsync(CancellationToken cancellationToken);
 
     }
-}
+
