@@ -2,7 +2,6 @@ using BackOffice.Components;
 using BackOffice.DataStuff;
 using Microsoft.EntityFrameworkCore;
 using MudBlazor.Services;
-using Microsoft.Extensions.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,7 +10,16 @@ builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 builder.Services.AddMudServices();
 
-builder.Services.AddControllersWithViews();
+var connectionString =
+    builder.Configuration.GetConnectionString("BackOfficeContext")
+        ?? throw new InvalidOperationException("Connection string"
+        + "'DefaultConnection' not found.");
+
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseSqlServer(connectionString));
+
+builder.Services.AddControllersWithViews(); builder.Services.AddControllersWithViews();
+
 
 var app = builder.Build();
 

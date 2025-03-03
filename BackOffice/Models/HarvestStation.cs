@@ -7,13 +7,12 @@ using System.Text.Json;
 namespace BackOffice.Models
 {
     [PrimaryKey("EventDate", "PlantCode")]
-    public class Base
+    public class HarvestStation
     {
         public required DateTime EventDate { get; set; }
         public required string PlantCode { get; set; }
         public required DateTime HarvestDate { get; set; }
        // public long ScanId { get; set; }
-        public int StationType { get; set; }
         public required string StationName { get; set; }
 
     }

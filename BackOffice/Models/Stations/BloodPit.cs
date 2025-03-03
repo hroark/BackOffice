@@ -7,7 +7,7 @@ namespace BackOffice.Models.Stations
     /// <summary>
     /// Represents the Blood Pit station transactions
     /// </summary>
-    public class BloodPit : Base, ITransaction<BloodPit>
+    public class BloodPit : HarvestStation, ITransaction<BloodPit>
     {
         public required string HouseTag1 { get; set; }
         public string? GeneratedHouseTag { get; set; }
