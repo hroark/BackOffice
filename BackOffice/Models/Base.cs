@@ -1,5 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using BackOffice.DataStuff.Interfaces;
+using BackOffice.Models.Stations;
+using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
+using System.Text.Json;
 
 namespace BackOffice.Models
 {
@@ -12,5 +15,6 @@ namespace BackOffice.Models
        // public long ScanId { get; set; }
         public int StationType { get; set; }
         public required string StationName { get; set; }
+
     }
 }
