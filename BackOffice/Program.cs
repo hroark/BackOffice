@@ -11,7 +11,6 @@ builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 builder.Services.AddMudServices();
 
-builder.Services.AddDbContext<ApplicationDbContext<T>>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("MudblazorDemo")));
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();

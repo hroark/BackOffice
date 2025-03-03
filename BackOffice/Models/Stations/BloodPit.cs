@@ -18,8 +18,15 @@ namespace BackOffice.Models.Stations
         public int Lot_No { get; set; }
 
 
+        public string ToJson()
+        {
+            return JsonSerializer.Serialize(this);
+        }
 
-
+        public BloodPit FromJson(string json)
+        {
+            return JsonSerializer.Deserialize<BloodPit>(json) ?? throw new InvalidOperationException("Json invalid for deserialization");
+        }
 
         public void SaveToDatabase(BloodPit item)
         {
@@ -29,15 +36,6 @@ namespace BackOffice.Models.Stations
         public ITransaction<BloodPit> GetFromDatabase(int count)
         {
             throw new NotImplementedException();
-        }
-
-        public void ToJson()
-        {
-            JsonSerializer.Serialize(this);
-        }
-        public BloodPit FromJson()
-        {
-            return JsonSerializer.Deserialize<BloodPit>() ?? throw new InvalidOperationException("Json invalid for deserialization");
         }
     }
 }
