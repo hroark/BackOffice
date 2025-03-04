@@ -1,4 +1,12 @@
-﻿namespace BackOffice.Models.Codes
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Text;
+using AFG.DataCollection.Common;
+using AFG.DataCollection.Core;
+
+namespace BackOffice.Models.Codes
 {
     public class Codes_ReasonPartCombinations
     {

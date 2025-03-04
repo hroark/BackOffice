@@ -1,5 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Data;
+using System.Linq;
+using System.Text;
+using AFG.DataCollection.Common;
+using AFG.DataCollection.Core;
 
 namespace BackOffice.Models.Codes
 {

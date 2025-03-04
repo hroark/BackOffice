@@ -1,4 +1,10 @@
-﻿using System.Data;
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Text;
+using AFG.DataCollection.Common;
+using AFG.DataCollection.Core;
 
 namespace BackOffice.Models.Codes
 {
@@ -65,23 +71,30 @@ namespace BackOffice.Models.Codes
             return string.Format("{0} ", Description);
         }
 
-    
+    }
+
+    public class Codes_Grade_Plant_Dict : Dictionary<string, Codes_Grade_Plant>
+    {
+        readonly string _localConnection = DataBaseMaster.DefaultConnectionString;
+        PlantConnection _pc = new PlantConnection();
 
     //public class Codes_Grade_Plant_Dict : Dictionary<string, Codes_Grade_Plant>
     //{
-
-
+            
+        
 
     //    public Codes_Grade_Plant_Dict(string plant)
     //    {
     //        Load("Abattoir.Grades_HotScaleSelect_Mobile", plant);
     //    }
 
+            Clear();
+            DataTable _codesGrade;
 
 
         //public void Load_Condemned()
         //{
-  
+
 
         //    Clear();
         //    DataTable _codesGrade;

@@ -1,5 +1,10 @@
-﻿using BackOffice.Models.Codes;
+﻿using AFG.DataCollection.Common;
+using AFG.DataCollection.Core;
+using BackOffice.Models.Codes;
+using System;
+using System.Collections.Generic;
 using System.Data;
+using System.Windows.Forms;
 
 namespace BackOffice.Models.Codes
 {
@@ -15,7 +20,14 @@ namespace BackOffice.Models.Codes
         }
 
     }
+}
 
+public class Codes_Cooler_Grading_Dict : Dictionary<CoolerFinalGrades, int>
+{
+    public Codes_Cooler_Grading_Dict(string plant)
+    {
+        DataTable _coolerGradingCodes =
+            DataHelper.ExecuteProc("Abattoir.Codes_CGrades_Get",new ProcParams("plant",plant), DataBaseMaster.PlantConnectionString);
 
 //public class Codes_Cooler_Grading_Dict : Dictionary<CoolerFinalGrades, int>
 //{
@@ -32,7 +44,7 @@ namespace BackOffice.Models.Codes
         //        HotGrade = _cgradeRow.Field<int>("HotGrade"),
         //        RunCode = _cgradeRow.Field<int>("RunCode")
         //    };
-
+           
 
         //    Add(_item, _cgradeRow.Field<int>("FinalGrade"));
        // }

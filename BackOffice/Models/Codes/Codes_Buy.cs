@@ -11,7 +11,7 @@ namespace BackOffice.Models.Codes
         public required string Code { get; set; }
         public required string PlantCode { get; set; }
         public required string Description { get; set; }
-
+        
 
         public override string ToString()
         {

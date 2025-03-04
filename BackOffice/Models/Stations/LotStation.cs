@@ -15,6 +15,7 @@ namespace BackOffice.Models.Stations
         public required Codes_Cool Cool { get; set; }
         public required Codes_Age Age { get; set; }
         public required Codes_CustomHarvest CustomHarvest { get; set; }
+        public required Codes_LotStatus LotStatus { get; set; }
         public required Codes_MudScore MudScore { get; set; }
         public bool? PlantNotified { get; set; }
         public required string CattleType { get; set; }

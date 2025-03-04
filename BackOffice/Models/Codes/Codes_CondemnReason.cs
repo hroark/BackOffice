@@ -1,5 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Data;
+using AFG.DataCollection.Common;
+using AFG.DataCollection.Core;
 
 namespace BackOffice.Models.Codes
 {
@@ -34,7 +36,7 @@ namespace BackOffice.Models.Codes
     //    public Codes_CondemnReason_Dict(CondemnScreenType reasonType, string plant, bool needsPlant = false)
     //    {
     //        string _storedProcName = "";
-
+          
     //        switch (reasonType)
     //        {
     //            case CondemnScreenType.HeadTable:
@@ -48,7 +50,7 @@ namespace BackOffice.Models.Codes
     //                break;
     //            case CondemnScreenType.Carcass:
     //                _storedProcName = "Abattoir.Codes_CondemnCarcassReason_Select_V2";
-
+                    
     //                break;
     //            case CondemnScreenType.SideTrim:
     //                _storedProcName = "Abattoir.Codes_SideTrim_Select_V2";
@@ -87,7 +89,7 @@ namespace BackOffice.Models.Codes
         //public Codes_CondemnReason_Dict(CondemnScreenType reasonType, string plant)
         //{
         //    string _storedProcName = "";
-
+      
         //    switch (reasonType)
         //    {
         //        case CondemnScreenType.HeadTable:

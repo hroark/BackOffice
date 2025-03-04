@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 namespace BackOffice.Models.Codes
 {
     [PrimaryKey("ScanString", "PlantCode")]
-    public class Codes_Tare
+    public class Codes_Tare 
     {
         public required string ScanString { get; set; }
         public required string PlantCode { get; set; }
@@ -23,7 +23,7 @@ namespace BackOffice.Models.Codes
     //{
     //    public Codes_Tare_Dict(string plant)
     //    {
-
+          
     //        DataTable _tareCodes = DataHelper.ExecuteProc("[Abattoir].[Codes_Tare_Select]", new ProcParams("Plant",plant,DataBaseMaster.PlantConnectionString));
 
     //        foreach (DataRow _tareRow in _tareCodes.Rows)

@@ -1,4 +1,7 @@
-﻿using System.Data;
+﻿using System.Collections.Generic;
+using System.Data;
+using AFG.DataCollection.Common;
+using AFG.DataCollection.Core;
 
 namespace BackOffice.Models.Codes
 {

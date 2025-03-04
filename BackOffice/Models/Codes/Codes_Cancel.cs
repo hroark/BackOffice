@@ -15,6 +15,8 @@ namespace BackOffice.Models.Codes
             Code = code;
             Description = description;
         }
+        public byte Code { get; set; }
+        public string Description { get; set; }
     }
 
 
@@ -35,7 +37,7 @@ namespace BackOffice.Models.Codes
     //        foreach (DataRow _row in _cancelCodes.Rows)
     //        {
     //            Codes_Cancel _item = new Codes_Cancel(_row.Field<byte>("Code"), _row.Field<string>("Description"));
-
+                
     //            Add(_item.Code, _item);
     //        }
     //    }

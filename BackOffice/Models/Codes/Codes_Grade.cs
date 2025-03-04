@@ -1,13 +1,15 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.Data;
+using AFG.DataCollection.Common;
+using AFG.DataCollection.Core;
 
 namespace BackOffice.Models.Codes
 {
     [PrimaryKey("Code", "PlantCode")]
     public class Codes_Grade
     {
-
+        
         /// <summary>
         /// Gets or sets the Grade Code.
         /// </summary>
@@ -33,7 +35,7 @@ namespace BackOffice.Models.Codes
 
         public string Abbreviation { get; set; }
 
-        public string Gender { get; set; }
+        public string Gender { get; set; } 
         /// <summary>
         /// Initializes a new instance of the <see cref="Codes_Grade"/> class.
         /// </summary>
@@ -70,8 +72,12 @@ namespace BackOffice.Models.Codes
             return string.Format("{0} ", Description);
         }
 
-    
+    }
 
+    public class Codes_Grade_Dict : Dictionary<string, Codes_Grade>
+    {
+        readonly string _localConnection = DataBaseMaster.AbattoirLocalExpressDb();
+        
     //public class Codes_Grade_Dict : Dictionary<string, Codes_Grade>
     //{
 
@@ -83,14 +89,18 @@ namespace BackOffice.Models.Codes
     //    {
     //        Load("Abattoir.Grades_HotScaleSelect", plant, connectionString);
     //    }
-
+           
         //public void Load_Condemned()
         //{
-
+            
+            Clear();
+            DataTable _codesGrade;
 
         //    Clear();
         //    DataTable _codesGrade;
-
+          
+                DataTable _gradeCodes = DataHelper.ExecuteProc("Abattoir.Grades_Select_Condemn_Active", DataBaseMaster.PlantConnectionString);
+                _codesGrade = _gradeCodes;
 
         //    DataTable _gradeCodes = DatabaseActions.ExecuteProcedure("Abattoir.Grades_Select_Condemn_Active", new Dictionary<string, string>());
         //    _codesGrade = _gradeCodes;
@@ -148,7 +158,7 @@ namespace BackOffice.Models.Codes
         }
 
         private void Load(string storedProc, string plant, string connectionString)
-        {
+            {
             //Clear();
             //DataTable _codesGrade;
             //if (plant.Length == 1)

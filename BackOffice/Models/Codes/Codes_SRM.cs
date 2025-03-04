@@ -1,12 +1,15 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Data;
+using System.Drawing;
+using AFG.DataCollection.Common;
+using AFG.DataCollection.Core;
 
 namespace BackOffice.Models.Codes
 {
     public class Codes_SRM
     {
         [Key]
-        public byte Code { get; set; }
+        public byte Code { get; set; }  
         public string Description { get; set; }
 
         public string ScanString { get; set; }

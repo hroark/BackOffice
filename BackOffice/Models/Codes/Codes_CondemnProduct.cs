@@ -1,5 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Data;
+using AFG.DataCollection.Common;
+using AFG.DataCollection.Core;
 
 namespace BackOffice.Models.Codes
 {
@@ -12,7 +14,7 @@ namespace BackOffice.Models.Codes
         public string ScanString { get; set; }
         public string Description { get; set; }
         public string AS400 { get; set; }
-
+       
 
         public override string ToString()
         {

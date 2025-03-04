@@ -28,8 +28,8 @@ namespace BackOffice.Models.Codes
             return new Codes_Grade(d.Grade, d.GradeDescription, d.ScanString);
         }
 
-
-
+        
+        
     }
     //public class Scan_TransformCodes_RunCodesAtGradingToRunCode : AFGObservableAFGObserver<Codes_RunCodesAtGrading, Codes_Run>
     //{
