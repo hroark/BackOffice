@@ -1,8 +1,5 @@
-﻿using BackOffice.DataStuff.Interfaces;
-using BackOffice.Models.Stations;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
-using System.Text.Json;
 
 namespace BackOffice.Models
 {
@@ -14,6 +11,5 @@ namespace BackOffice.Models
         public required DateTime HarvestDate { get; set; }
        // public long ScanId { get; set; }
         public required string StationName { get; set; }
-
     }
 }
