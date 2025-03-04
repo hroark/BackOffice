@@ -1,0 +1,2 @@
+https://learn.microsoft.com/en-us/ef/core/dbcontext-configuration/
+https://codewithmukesh.com/blog/blazor-crud-using-mudblazor/

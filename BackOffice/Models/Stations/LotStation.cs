@@ -22,7 +22,7 @@ namespace BackOffice.Models.Stations
         public required string UnloadTime { get; set; }
         public required string RestrainerTime { get; set; }
         public int? EditReason { get; set; }
-        public DataTable? ReceivingNumbers { get; set; }
+        public List<string>? ReceivingNumbers { get; set; }
         public bool? Fats { get; set; }
         public bool? BadLot { get; set; }
         public string? Buy { get; set; }

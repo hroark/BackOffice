@@ -1,18 +1,26 @@
 ﻿@inherits LayoutComponentBase
 
 <div class="page">
-    <div class="sidebar">
-        <NavMenu />
-    </div>
-
+    <MudThemeProvider />
+    <MudPopoverProvider />
+    <MudDialogProvider />
+    @* <div><TopMenuBar>Stuff</TopMenuBar></div> *@
     <main>
-        <div class="top-row px-4">
-            <a href="https://learn.microsoft.com/aspnet/core/" target="_blank">About</a>
-        </div>
-
-        <article class="content px-4">
-            @Body
-        </article>
+        <MudLayout>
+            <MudAppBar Elevation="1">
+                <MudText Typo="Typo.h5" Class="ml-3">PFS Back Office</MudText>
+                @* <MudSpacer Typo="Typo.body1" /> *@
+                <MudMenu Label="Editing" onclick="OnMainMenuClick">
+                    <MudMenuItem Label="Item 1" />
+                    <MudMenuItem Label="Item 2" />
+                    <MudMenuItem Label="Item 3" />
+                </MudMenu>
+                <MudIconButton Icon="@Icons.Material.Filled.MoreVert" Color="Color.Inherit" Edge="Edge.End" />
+            </MudAppBar>
+            <MudMainContent>
+                @*Body*@
+            </MudMainContent>
+        </MudLayout>
     </main>
 </div>
 
@@ -21,3 +29,11 @@
     <a href="" class="reload">Reload</a>
     <a class="dismiss">🗙</a>
 </div>
+
+
+@code{
+    void OnMainMenuClick()
+    {
+        
+    }
+}

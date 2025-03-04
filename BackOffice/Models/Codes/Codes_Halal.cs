@@ -1,9 +1,11 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace BackOffice.Models.Codes
 {
     public class Codes_Halal
     {
+        [Key]
         public string ScanString { get; set; }
         public string Description { get; set; }
         public bool Value { get; set; }
@@ -16,12 +18,12 @@ namespace BackOffice.Models.Codes
         }
     }
 
-    public class Codes_Halal_Dict : Dictionary<string, Codes_Halal>
-    {
-        public Codes_Halal_Dict()
-        {
-            Add("H", new Codes_Halal("H", "Halal", true));
-            Add("T", new Codes_Halal("L", "Not Halal", false));
-        }
-    }
+    //public class Codes_Halal_Dict : Dictionary<string, Codes_Halal>
+    //{
+    //    public Codes_Halal_Dict()
+    //    {
+    //        Add("H", new Codes_Halal("H", "Halal", true));
+    //        Add("T", new Codes_Halal("L", "Not Halal", false));
+    //    }
+    //}
 }

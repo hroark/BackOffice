@@ -78,68 +78,75 @@ namespace BackOffice.Models.Codes
         readonly string _localConnection = DataBaseMaster.DefaultConnectionString;
         PlantConnection _pc = new PlantConnection();
 
-        public Codes_Grade_Plant_Dict(string plant)
-        {
-            Load("Abattoir.Grades_HotScaleSelect_Mobile", plant);
-        }
+    //public class Codes_Grade_Plant_Dict : Dictionary<string, Codes_Grade_Plant>
+    //{
             
         
 
-        public void Load_Condemned()
-        {
-            PlantConnection _pc = new PlantConnection();
+    //    public Codes_Grade_Plant_Dict(string plant)
+    //    {
+    //        Load("Abattoir.Grades_HotScaleSelect_Mobile", plant);
+    //    }
 
             Clear();
             DataTable _codesGrade;
 
 
-            DataTable _gradeCodes = DataHelper.ExecuteProc("Abattoir.Grades_Select_Condemn_Active", _pc.ConnectionString);
-            _codesGrade = _gradeCodes;
-
-            foreach (DataRow _gradeRow in _codesGrade.Rows)
-            {
-                Codes_Grade_Plant _item = new Codes_Grade_Plant
-                {
-                    Code = _gradeRow.Field<byte>("GradeCode"),
-                    Description = _gradeRow.Field<string>("Description"),
-                    ScanString = _gradeRow.Field<string>("ScanString"),
-                    // Abbreviation = _gradeRow.Field<string>("Abbreviation"),
-                };
-
-                Add(_item.ScanString.ToUpper(), _item);
-
-            }
-
-        }
-
-        private void Load(string StoredProc, string plant)
-        {
-            Clear();
-            DataTable _codesGrade;
-            if (plant.Length == 1)
-            {
-                plant = "0" + plant;
-            }
-
-                DataTable _gradeCodes = DataHelper.ExecuteProc(StoredProc, DataBaseMaster.DefaultConnectionString);
-                _codesGrade = _gradeCodes;
+        //public void Load_Condemned()
+        //{
 
 
+        //    Clear();
+        //    DataTable _codesGrade;
 
-            foreach (DataRow _gradeRow in _codesGrade.Rows)
-            {
-                Codes_Grade_Plant _item = new Codes_Grade_Plant
-                {
-                    Code = _gradeRow.Field<byte>("GradeCode"),
-                    Description = _gradeRow.Field<string>("Description"),
-                    ScanString = _gradeRow.Field<string>("ScanString"),
-                    //Abbreviation = _gradeRow.Field<string>("Abbreviation"),
-                };
 
-                Add(_item.ScanString.ToUpper(), _item);
+        //    DataTable _gradeCodes = DatabaseActions.ExecuteProcedure("Abattoir.Grades_Select_Condemn_Active", new Dictionary<string, string>());
+        //    _codesGrade = _gradeCodes;
 
-            }
+        //    foreach (DataRow _gradeRow in _codesGrade.Rows)
+        //    {
+        //        Codes_Grade_Plant _item = new Codes_Grade_Plant
+        //        {
+        //            Code = _gradeRow.Field<byte>("GradeCode"),
+        //            Description = _gradeRow.Field<string>("Description"),
+        //            ScanString = _gradeRow.Field<string>("ScanString"),
+        //            // Abbreviation = _gradeRow.Field<string>("Abbreviation"),
+        //        };
 
-        }
+        //        Add(_item.ScanString.ToUpper(), _item);
+
+        //    }
+
+        //}
+
+        //private void Load(string StoredProc, string plant)
+        //{
+        //    Clear();
+        //    DataTable _codesGrade;
+        //    if (plant.Length == 1)
+        //    {
+        //        plant = "0" + plant;
+        //    }
+
+        //    DataTable _gradeCodes = DatabaseActions.ExecuteProcedure(StoredProc, new Dictionary<string, string>());
+        //    _codesGrade = _gradeCodes;
+
+
+
+        //    foreach (DataRow _gradeRow in _codesGrade.Rows)
+        //    {
+        //        Codes_Grade_Plant _item = new Codes_Grade_Plant
+        //        {
+        //            Code = _gradeRow.Field<byte>("GradeCode"),
+        //            Description = _gradeRow.Field<string>("Description"),
+        //            ScanString = _gradeRow.Field<string>("ScanString"),
+        //            //Abbreviation = _gradeRow.Field<string>("Abbreviation"),
+        //        };
+
+        //        Add(_item.ScanString.ToUpper(), _item);
+
+        //    }
+
+        //}
     }
 }
